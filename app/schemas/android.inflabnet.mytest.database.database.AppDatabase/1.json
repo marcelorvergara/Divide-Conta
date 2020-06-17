@@ -1,0 +1,116 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "860465bf806421c996c61b690e1ca695",
+    "entities": [
+      {
+        "tableName": "Orcamento",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_orcamento` INTEGER PRIMARY KEY AUTOINCREMENT, `mes` INTEGER NOT NULL, `valor` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id_orcamento",
+            "columnName": "id_orcamento",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mes",
+            "columnName": "mes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "valor",
+            "columnName": "valor",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_orcamento"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "MesaOrc",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_mesa` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nome_mesa` TEXT NOT NULL, `gasto` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id_mesa",
+            "columnName": "id_mesa",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome_mesa",
+            "columnName": "nome_mesa",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gasto",
+            "columnName": "gasto",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_mesa"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Saldo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_saldo` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `saldo` INTEGER NOT NULL, `id_orcamento` INTEGER NOT NULL, `id_mesa` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id_saldo",
+            "columnName": "id_saldo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "saldo",
+            "columnName": "saldo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id_orcamento",
+            "columnName": "id_orcamento",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id_mesa",
+            "columnName": "id_mesa",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_saldo"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '860465bf806421c996c61b690e1ca695')"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home_menu"
+    app:startDestination="@id/homeMenuFragment">
+
+    <fragment
+        android:id="@+id/homeMenuFragment"
+        android:name="project.inflabnet.mytest.fragments.HomeMenuFragment"
+        android:label="fragment_home_menu"
+        tools:layout="@layout/fragment_home_menu" >
+        <action
+            android:id="@+id/action_homeMenuFragment_to_criarSalaFragment"
+            app:destination="@id/criarSalaFragment" />
+        <action
+            android:id="@+id/action_homeMenuFragment_to_orcamentoFragment"
+            app:destination="@id/orcamentoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/criarSalaFragment"
+        android:name="project.inflabnet.mytest.fragments.CriarSalaFragment"
+        android:label="fragment_criar_sala"
+        tools:layout="@layout/fragment_criar_sala" >
+        <action
+            android:id="@+id/action_criarSalaFragment_to_homeMenuFragment"
+            app:destination="@id/homeMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orcamentoFragment"
+        android:name="project.inflabnet.mytest.fragments.OrcamentoFragment"
+        android:label="fragment_orcamento"
+        tools:layout="@layout/fragment_orcamento" >
+        <action
+            android:id="@+id/action_orcamentoFragment_to_homeMenuFragment"
+            app:destination="@id/homeMenuFragment" />
+    </fragment>
+</navigation>
