@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/ADS2020-app.iml" filepath="$PROJECT_DIR$/app/ADS2020-app.iml" group="myTest/app" />
+      <module fileurl="file://$PROJECT_DIR$/myTest.iml" filepath="$PROJECT_DIR$/myTest.iml" group="myTest" />
+    </modules>
+  </component>
+</project>
